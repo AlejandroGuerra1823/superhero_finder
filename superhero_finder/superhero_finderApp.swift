@@ -11,7 +11,7 @@ import SwiftUI
 struct superhero_finderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StackNavigation()
         }
     }
 }
