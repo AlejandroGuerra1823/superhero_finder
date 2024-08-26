@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct PrincipalView: View {
+    @State var superheroName:String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            TextField("", text: $superheroName, prompt: Text("Find your hero").font(.title).bold().foregroundColor(.white)).foregroundColor(.white)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.black
+        )
     }
 }
 
