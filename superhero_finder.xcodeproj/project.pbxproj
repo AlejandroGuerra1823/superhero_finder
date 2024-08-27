@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087FED892C7D780C002E76F2 /* ApiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FED882C7D780C002E76F2 /* ApiNetwork.swift */; };
 		08BA02892C7A9B5B00EAFFA1 /* superhero_finderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BA02882C7A9B5B00EAFFA1 /* superhero_finderApp.swift */; };
 		08BA028B2C7A9B5B00EAFFA1 /* StackNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BA028A2C7A9B5B00EAFFA1 /* StackNavigation.swift */; };
 		08BA028D2C7A9B5C00EAFFA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08BA028C2C7A9B5C00EAFFA1 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087FED882C7D780C002E76F2 /* ApiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetwork.swift; sourceTree = "<group>"; };
 		08BA02852C7A9B5B00EAFFA1 /* superhero_finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = superhero_finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08BA02882C7A9B5B00EAFFA1 /* superhero_finderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = superhero_finderApp.swift; sourceTree = "<group>"; };
 		08BA028A2C7A9B5B00EAFFA1 /* StackNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackNavigation.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		087FED872C7D77E8002E76F2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				087FED882C7D780C002E76F2 /* ApiNetwork.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		08BA027C2C7A9B5B00EAFFA1 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		08BA02872C7A9B5B00EAFFA1 /* superhero_finder */ = {
 			isa = PBXGroup;
 			children = (
+				087FED872C7D77E8002E76F2 /* API */,
 				08BA02972C7AA39D00EAFFA1 /* Screens */,
 				08BA02962C7A9D6C00EAFFA1 /* StackNavigation */,
 				08BA02882C7A9B5B00EAFFA1 /* superhero_finderApp.swift */,
@@ -159,6 +170,7 @@
 				08BA028B2C7A9B5B00EAFFA1 /* StackNavigation.swift in Sources */,
 				08BA02992C7AA3BB00EAFFA1 /* PrincipalView.swift in Sources */,
 				08BA02892C7A9B5B00EAFFA1 /* superhero_finderApp.swift in Sources */,
+				087FED892C7D780C002E76F2 /* ApiNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
