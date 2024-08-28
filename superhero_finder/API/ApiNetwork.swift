@@ -10,18 +10,24 @@ import Foundation
 
 class ApiNetwork{
     
-    struct Wrapper{
+    struct Wrapper:Codable{
         let response:String
         let results:[Superhero]
     }
     
-    struct Superhero{
+    struct Superhero:Codable, Identifiable{
         let id:String
         let name:String
     }
     
-    func getHeroesByQuery(query:String){
+    func getHeroesByQuery(query:String) async throws -> Wrapper{
+        let url = URL(string:"https://superheroapi.com/api/ece6f1fac2c8d57820f57ab49897eef1/search/\(query)")!
         
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        let wrapper = try JSONDecoder().decode(Wrapper.self, from: data)
+        
+        return wrapper
     }
     
 }
