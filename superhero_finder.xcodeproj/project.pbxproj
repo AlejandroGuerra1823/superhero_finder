@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083A490B2C80191E00E310C3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 083A490A2C80191E00E310C3 /* SDWebImageSwiftUI */; };
 		087FED892C7D780C002E76F2 /* ApiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FED882C7D780C002E76F2 /* ApiNetwork.swift */; };
 		08BA02892C7A9B5B00EAFFA1 /* superhero_finderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BA02882C7A9B5B00EAFFA1 /* superhero_finderApp.swift */; };
 		08BA028B2C7A9B5B00EAFFA1 /* StackNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BA028A2C7A9B5B00EAFFA1 /* StackNavigation.swift */; };
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083A490B2C80191E00E310C3 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +115,9 @@
 			dependencies = (
 			);
 			name = superhero_finder;
+			packageProductDependencies = (
+				083A490A2C80191E00E310C3 /* SDWebImageSwiftUI */,
+			);
 			productName = superhero_finder;
 			productReference = 08BA02852C7A9B5B00EAFFA1 /* superhero_finder.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 08BA027C2C7A9B5B00EAFFA1;
+			packageReferences = (
+				083A49092C80191E00E310C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 08BA02862C7A9B5B00EAFFA1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -376,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		083A49092C80191E00E310C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		083A490A2C80191E00E310C3 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 083A49092C80191E00E310C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08BA027D2C7A9B5B00EAFFA1 /* Project object */;
 }

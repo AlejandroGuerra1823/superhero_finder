@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PrincipalView: View {
     @State var superheroName:String = ""
@@ -26,14 +27,30 @@ struct PrincipalView: View {
             
             
             List(wrapper?.results ?? []){ superhero in
-                Text(superhero.name)
+                SuperheroItem(superhero: superhero)
                 
-            }
+            }.listStyle(.plain)
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.black
         )
     }
 }
+
+struct SuperheroItem:View {
+    
+    let superhero:ApiNetwork.Superhero
+    
+    var body: some View {
+        ZStack{
+            WebImage(url: URL(string: superhero.image.url)).resizable().indicator(.activity).scaledToFill().frame(height: 200)
+            VStack{
+                Spacer()
+                Text("Text").foregroundColor(.white).font(.title).bold().padding().frame(maxWidth: .infinity).background(.red.opacity(0.5))
+            }
+        }.frame(height: 200).cornerRadius(32).listRowBackground(Color.black)
+    }
+}
+
 
 #Preview {
     PrincipalView()
