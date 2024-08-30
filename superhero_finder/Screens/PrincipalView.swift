@@ -11,9 +11,11 @@ import SDWebImageSwiftUI
 struct PrincipalView: View {
     @State var superheroName:String = ""
     @State var wrapper:ApiNetwork.Wrapper? = nil
+    @State var loading: Bool = false
     var body: some View {
         VStack{
             TextField("", text: $superheroName, prompt: Text("Superman...").font(.title2).bold().foregroundColor(.gray)).font(.title2).bold().foregroundColor(.white).padding(16).border(.purple).padding(8).autocorrectionDisabled().onSubmit {
+                loading = true
                 print(superheroName)
                 Task{
                     do{
@@ -21,16 +23,21 @@ struct PrincipalView: View {
                     }catch{
                         print("error")
                     }
-                    
+                    loading = false
                 }
             }
+            if loading {
+                ProgressView().tint(.white)
+            }
             
-            
-            List(wrapper?.results ?? []){ superhero in
-                SuperheroItem(superhero: superhero)
-                
-            }.listStyle(.plain)
-            
+            NavigationStack{
+                List(wrapper?.results ?? []){ superhero in
+                    ZStack{
+                        SuperheroItem(superhero: superhero)
+                        NavigationLink(destination: SuperheroDetail(id: superhero.id)){EmptyView().opacity(0)}
+                    }.listRowBackground(Color.black)
+                }.listStyle(.plain)
+            }
         }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.black
         )
     }
@@ -45,9 +52,9 @@ struct SuperheroItem:View {
             WebImage(url: URL(string: superhero.image.url)).resizable().indicator(.activity).scaledToFill().frame(height: 200)
             VStack{
                 Spacer()
-                Text("Text").foregroundColor(.white).font(.title).bold().padding().frame(maxWidth: .infinity).background(.red.opacity(0.5))
+                Text("\(superhero.name)").foregroundColor(.white).font(.title).bold().padding().frame(maxWidth: .infinity).background(.red.opacity(0.5))
             }
-        }.frame(height: 200).cornerRadius(32).listRowBackground(Color.black)
+        }.frame(height: 200).cornerRadius(32)
     }
 }
 
